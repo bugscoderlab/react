@@ -32,3 +32,10 @@ git push -u origin main
 ```
 git checkout [--orphan] branch-name
 ```
+
+# Git check branch
+
+```
+git status
+git branch
+```
