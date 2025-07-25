@@ -26,3 +26,9 @@ git remote add origin https://github.com/bugscoderlab/react.git
 git branch -M main
 git push -u origin main
 ```
+
+# Git new brach
+
+```
+git checkout [--orphan] branch-name
+```
