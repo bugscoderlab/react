@@ -1,11 +1,21 @@
 import { Navigate, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation'
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import UserProfile from './pages/UserProfile';
-import Search from './pages/Search';
-import Dashboard from './pages/Dashboard';
+import { lazy } from 'react';
+
+// import Navigation from './components/Navigation'
+// import Home from './pages/Home';
+// import About from './pages/About';
+// import Contact from './pages/Contact';
+// import UserProfile from './pages/UserProfile';
+// import Search from './pages/Search';
+// import Dashboard from './pages/Dashboard';
+
+const Navigation = lazy(() => import('./components/Navigation'))
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Contact = lazy(() => import('./pages/Contact'))
+const UserProfile = lazy(() => import('./pages/UserProfile'))
+const Search = lazy(() => import('./pages/Search'))
+const Dashboard = lazy(() => import('./pages/Dashboard'))
 
 const ProtectedRoute = ({ children, isAuthenticated, redirectTo = "/login" }) => {
   return isAuthenticated ? children : <Navigate to={redirectTo} />;
